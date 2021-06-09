@@ -1,0 +1,65 @@
+Promise
+--------
+ES6 came with many new features, but one of the best features was the official introduction of Promises. Promises allow you to write clean non-callback-centric code without ever having to worry about callback hell. 
+
+
+A promise in javascript is just like a promise in real life.
+
+For example:
+
+              I promise to be a cook chef (has 2 result)
+                                ||
+ 1)Promise completes (Resolved)    2) Promise Failed (Rejected)
+
+
+let p = new Promise((resolve,reject)=>{
+  let a=1+1;
+  if (a=2){
+     resolve('Success')
+   }else{
+     reject('Failed')
+  }
+})
+
+p.then((message)=>{
+console.log('This is in the then'+message)
+}).catch((message)=>{
+console.log('This is in the catch
+})
+
+
+.then() and .catch()
+--------------------
+Since it's our promise, 
+any thing inside'.then()' is going to run for resolve, only if I give the best result.
+
+But if I don't give the best results (failed condition),      '.catch()' is going to run for reject 
+
+_____________________________________________________
+
+Q. When to use promises? 
+
+Ans. Promises are really good to use, when it's gonna take a long time in the background, 
+
+For example :
+
+Such as downloading an image from a different server, and you wanna do it after downloading is complete making everyone wait for it.
+
+and catch it to see if it's failed so that you can re-try it or give the error message .
+
+_____________________________________________________
+
+Promise.all()
+-------------
+When we have multiple different promises and we want to run all of them parallel at the same, we don't have to worry about waiting for one before we start the next,so we can use promise.all()
+
+Inside the promise.all(), we send an ARRAY of all different promises that we want to run,  then promise.all() runs all different promises, as soon as they are done, it calls .then() and .catch() methods depending upon the resolve or reject.
+
+For example : Out of three promises, first promises takes longer time and actually needed to call the database to get some results back, it will run at the same time as other two, and if other two are quick, they don't have to wait for the first one to finish.
+_____________________________________________________
+
+Promise.race()
+--------------
+
+Unlike promise.all(), in a scenario, where I wanna do something as soon as one of my promises is completed, we can use promise.race()
+
