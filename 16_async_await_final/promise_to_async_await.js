@@ -18,16 +18,30 @@ function processRequest(response){
 
 /*
 We just wanna call the makeRequest() function and return the processRequest(response)
-*/
+
 
 let a = makeRequest('Google')
 .then((message)=>{
     console.log('Response Received : '+message)
     return processRequest(message)
 })
-
 a.then((messages)=>{
     console.log(messages)
-}).catch((messages)=>{
-    console.log(messages)
+}).catch((err)=>{
+    console.log(err)
 })
+
+*/
+
+async function doWork(){
+  try{
+    const response = await makeRequest('google')
+  console.log('Response Received')
+   const processResponse = await processRequest(response)
+   console.log(processResponse)
+  }catch(err){
+    console.log(err)
+  }
+}
+
+doWork();
