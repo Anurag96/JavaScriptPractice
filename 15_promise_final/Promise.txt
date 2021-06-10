@@ -1,3 +1,5 @@
+Reference : https://www.youtube.com/watch?v=DHvZLI7Db8E
+
 Promise
 --------
 ES6 came with many new features, but one of the best features was the official introduction of Promises. Promises allow you to write clean non-callback-centric code without ever having to worry about callback hell. 
