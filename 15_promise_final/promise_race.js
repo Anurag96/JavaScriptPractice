@@ -20,8 +20,7 @@ let recordVideoThree= new Promise ((resolve,reject)=>{
     
 })
 
-
-
+//Example for Promise.race() to run all the promises together, But .race() run returns the first excecuted one
 let a = Promise.race([
     recordVideoOne,
     recordVideoTwo,
