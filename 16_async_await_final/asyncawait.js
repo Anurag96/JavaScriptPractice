@@ -16,6 +16,7 @@ function processRequest(value){
     })
 }
 
+//Promise,then,catch
 // let a = makeRequest('oogle').then((message)=>{
 //     console.log('Response recevied =>'+message)
 //     return processRequest(message)
@@ -29,6 +30,7 @@ function processRequest(value){
 // console.log(message)
 // })
 
+//Promises,Async,await
 async function returnValue(){
     try {const message = await makeRequest('oogle')
     console.log('Response recevied =>'+message)

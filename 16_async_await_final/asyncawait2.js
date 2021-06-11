@@ -22,14 +22,51 @@ function userStatusPromise(){
 
 }
 
-async function finalResult(){
-  try{ const a = await userStatusPromise()
-   console.log('Success : ', a)}
-   catch(err){
-    console.log(err.name+' and '+err.message)   
-   }
-}
-finalResult()
+userStatusPromise().then((message)=>{
+    console.log('Success : ', message)
+}).catch((err)=>{
+    console.log(err.name+' and '+err.message)
+})
+
+// userStatusPromise().then((message)=>{
+// console.log('Success : ', message)
+// }).catch(messages=>{
+// console.log(messages.name+' and '+messages.message)
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function finalResult(){
+//   try{ const a = await userStatusPromise()
+//    console.log('Success : ', a)}
+//    catch(err){
+//     console.log(err.name+' and '+err.message)   
+//    }
+// }
+// finalResult()
 
 // userStatusPromise().then((message)=>{
 // console.log('Success : ', message)

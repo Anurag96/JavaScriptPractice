@@ -1,0 +1,37 @@
+Reference: https://www.youtube.com/watch?v=V_Kr9OSfDeU&list=RDCMUCFbNIlppjAuEX4znoulh0Cw&index=2
+
+Aysnc Await
+-----------
+
+Promises were created to solve the problem with callback hell, but there are still plenty of nested problems related to promises. This is where async/await comes in. JavaScript added async/await to allows developers to write asynchronous code in a way that looks and feels synchronous. This helps to remove many of the problems with nesting that promises have, and as a bonus can make asynchronous code much easier to read and write.
+
+Point to Remember
+
+1. A function has to always start with 'async'
+
+example : async function functionName(){}
+
+2. 'async' is always followed by await calling function and goes inside try-catch block
+
+example :
+function addProblem(){
+    let a=2;
+    //It's Promise not Promises
+    return new Promise((resolve,reject)=>{
+        if(a==2){
+            resolve('Result Matched')
+        }else{
+            reject('Result dint Matched')
+        }
+    })
+}
+ async function ResultAsync(){
+  try{                                          // entire process goes inside try-catch block
+      const resultFinal = await addProblem();  // 'async' is always followed by await calling function
+      console.log(resultFinal)
+  }catch(err){
+      console.log(err)
+  }
+}
+ResultAsync()  // don't forget to call 
+
